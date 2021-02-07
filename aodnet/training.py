@@ -18,17 +18,25 @@ class Trainer:
     def __len__(self):
         return len(self.train_dataset)
 
-    def build_datasets(self, dataset_path: str, image_crop_size: int, buffer_size: int, batch_size: int, val_split: float):
+    def _plot_dataset_samples(self):
+        print(self.train_dataset)
+        print(self.val_dataset)
+        x, y = next(iter(self.train_dataset))
+        print('X shape:', x.shape)
+        print('Y shape:', y.shape)
+        num = x.shape[0] if x.shape[0] <= 4 else 4
+        for _ in range(num):
+            plot_result(x.numpy()[_], y.numpy()[_], 'Hazy', 'Original')
+
+    def build_datasets(
+            self, dataset_path: str, image_crop_size: int,
+            buffer_size: int, batch_size: int, val_split: float):
         dataloader = DeHazeDataLoader(dataset_path=dataset_path)
         self.train_dataset, self.val_dataset = dataloader.build_dataset(
             image_crop_size=image_crop_size, buffer_size=buffer_size,
             batch_size=batch_size, val_split=val_split
         )
-        print(self.train_dataset)
-        print(self.val_dataset)
-        x, y = next(iter(self.train_dataset))
-        for _ in range(x.shape[0]):
-            plot_result(x.numpy()[_], y.numpy()[_], 'Hazy', 'Original')
+        self._plot_dataset_samples()
 
     def build_model(
             self, build_shape: Tuple[int, int, int, int], stddev: float = 0.02,
