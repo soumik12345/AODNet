@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 def download_dataset():
     gdown.download(
         'https://drive.google.com/uc?id=1sInD9Ydq8-x7WwqehE0EyRknMdSFPOat',
-        'LOLdataset.zip', quiet=False
+        'Dehaze-NYU.zip', quiet=False
     )
     print('Unpacking Dataset')
     subprocess.run(['unzip', 'Dehaze-NYU.zip'])
