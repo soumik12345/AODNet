@@ -18,10 +18,11 @@ class Trainer:
     def __len__(self):
         return len(self.train_dataset)
 
-    def build_datasets(self, dataset_path: str, image_crop_size: int, batch_size: int, val_split: float):
+    def build_datasets(self, dataset_path: str, image_crop_size: int, buffer_size: int, batch_size: int, val_split: float):
         dataloader = DeHazeDataLoader(dataset_path=dataset_path)
         self.train_dataset, self.val_dataset = dataloader.build_dataset(
-            image_crop_size=image_crop_size, batch_size=batch_size, val_split=val_split
+            image_crop_size=image_crop_size, buffer_size=buffer_size,
+            batch_size=batch_size, val_split=val_split
         )
         print(self.train_dataset)
         print(self.val_dataset)

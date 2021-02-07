@@ -68,7 +68,7 @@ def apply_scaling(low_image, enhanced_image):
     return low_image, enhanced_image
 
 
-def configure_dataset(dataset, image_crop_size: int, batch_size: int, is_dataset_train: bool):
+def configure_dataset(dataset, image_crop_size: int, buffer_size: int, batch_size: int, is_dataset_train: bool):
     dataset = dataset.map(
         apply_scaling, num_parallel_calls=tf.data.experimental.AUTOTUNE)
     if image_crop_size > 0:
@@ -83,6 +83,7 @@ def configure_dataset(dataset, image_crop_size: int, batch_size: int, is_dataset
             random_rotate, num_parallel_calls=tf.data.experimental.AUTOTUNE)
         dataset = dataset.map(
             random_flip, num_parallel_calls=tf.data.experimental.AUTOTUNE)
+    dataset = dataset.shuffle(buffer_size)
     dataset = dataset.batch(batch_size)
     dataset = dataset.repeat(1)
     dataset = dataset.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
