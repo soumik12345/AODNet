@@ -55,7 +55,7 @@ class Trainer:
             tf.keras.callbacks.ModelCheckpoint(
                 os.path.join(checkpoint_dir, 'low_light_weights_best.h5'),
                 monitor='val_loss', save_weights_only=True,
-                mode="max", save_best_only=True, save_freq=1
+                mode='min', save_best_only=True, save_freq=1
             ),
             tf.keras.callbacks.TensorBoard(
                 log_dir=log_dir, histogram_freq=1,
@@ -64,6 +64,6 @@ class Trainer:
             WandbCallback()
         ]
         return self.model.fit(
-            self.train_dataset, epochs=epochs,
-            validation_data=self.val_dataset, callbacks=callbacks
+            self.train_dataset, validation_data=self.val_dataset,
+            epochs=epochs, callbacks=callbacks
         )
