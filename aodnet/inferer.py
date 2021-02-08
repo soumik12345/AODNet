@@ -20,7 +20,7 @@ class Inferer:
         self.model.load_weights(
             './checkpoints/aodnet_weights/weights')
 
-    def infer(self, image_path: str):
+    def infer(self, image_path):
         original_image = Image.open(image_path)
         image = tf.keras.preprocessing.image.img_to_array(original_image)
         image = image.astype('float32') / 255.0

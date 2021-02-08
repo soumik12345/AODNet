@@ -1,0 +1,6 @@
+gdown==3.12.2
+matplotlib==3.3.4
+plotly==4.14.3
+streamlit==0.76.0
+tensorflow==2.4.1
+wandb==0.10.17
