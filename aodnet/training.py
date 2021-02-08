@@ -14,6 +14,7 @@ class Trainer:
         self.train_dataset = None
         self.val_dataset = None
         self.model = None
+        self.training_history = None
 
     def __len__(self):
         return len(self.train_dataset)
@@ -77,7 +78,7 @@ class Trainer:
             ),
             WandbCallback()
         ]
-        history = self.model.fit(
+        self.training_history = self.model.fit(
             self.train_dataset, validation_data=self.val_dataset,
             epochs=epochs, callbacks=callbacks
         )
