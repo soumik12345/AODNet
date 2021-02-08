@@ -4,6 +4,8 @@ Tensorflow implementation of [An All-in-One Network for Dehazing and Beyond](htt
 
 ![](./assets/aodnet_architecture.jpg)
 
+**Training Notebook:** [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/soumik12345/AODNet/blob/master/notebooks/AODnet_Train.ipynb)
+
 **Training Logs:** [https://wandb.ai/19soumik-rakshit96/aodnet](https://wandb.ai/19soumik-rakshit96/aodnet)
 
 ## Instructions for running Inference
