@@ -6,6 +6,12 @@ Tensorflow implementation of [An All-in-One Network for Dehazing and Beyond](htt
 
 **Training Logs:** [https://wandb.ai/19soumik-rakshit96/aodnet](https://wandb.ai/19soumik-rakshit96/aodnet)
 
+## Instructions for running Inference
+
+- `python3 -m pip install -r requirements.txt`
+
+- `python3 -m streamlit run app.py`
+
 ## Results
 
 ![](./assets/pred_1.png)
