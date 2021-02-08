@@ -1,9 +1,9 @@
-import os
 import tensorflow as tf
 from typing import Tuple
 from .models import AODNet
 from datetime import datetime
 from wandb.keras import WandbCallback
+from plotly import graph_objects as go
 from .dataloader import DeHazeDataLoader
 from .utils import peak_signal_noise_ratio, plot_result
 
@@ -27,6 +27,19 @@ class Trainer:
         num = x.shape[0] if x.shape[0] <= 4 else 4
         for _ in range(num):
             plot_result(x.numpy()[_], y.numpy()[_], 'Hazy', 'Original')
+
+    def _plot_history(self, train_property: str, plot_title: str):
+        figure = go.Figure()
+        figure.add_traces(
+            go.Scatter(
+                x=[i + 1 for i in list(
+                    range(len(self.training_history.history[train_property])))],
+                y=self.training_history.history[train_property],
+                mode='lines+markers', name='Training Result: ' + train_property
+            )
+        )
+        figure.update_layout(title='Loss')
+        return figure
 
     def build_datasets(
             self, dataset_path: str, image_crop_size: int, buffer_size: int,
@@ -64,7 +77,17 @@ class Trainer:
             ),
             WandbCallback()
         ]
-        return self.model.fit(
+        history = self.model.fit(
             self.train_dataset, validation_data=self.val_dataset,
             epochs=epochs, callbacks=callbacks
         )
+        self._plot_history(
+            train_property='loss', plot_title='Loss').show()
+        self._plot_history(
+            train_property='peak_signal_noise_ratio', plot_title='PSNR').show()
+
+    def save(self, model_name: str):
+        save_path = './checkpoints/{}'.format(model_name)
+        print('Saving model at {}...'.format(save_path))
+        self.model.save(save_path)
+        print('Done!!!')
