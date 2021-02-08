@@ -11,7 +11,11 @@ def main():
     subprocess.run(['rm', '-r', './checkpoints/'])
     inferer = Inferer()
     st.sidebar.text('Building Model...')
-    inferer.build_model()
+    try:
+        inferer.build_model()
+    except FileNotFoundError:
+        subprocess.run(['apt-get', 'unzip'])
+        inferer.build_model()
     st.sidebar.text('Done!')
     uploaded_files = st.sidebar.file_uploader(
         'Upload Images', accept_multiple_files=True
