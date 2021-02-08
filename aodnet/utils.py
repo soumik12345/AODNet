@@ -6,14 +6,22 @@ import tensorflow as tf
 from matplotlib import pyplot as plt
 
 
-def download_dataset():
+def download_from_drive(file_id: str, file_name: str, unpack_location: str = './'):
     gdown.download(
-        'https://drive.google.com/uc?id=1sInD9Ydq8-x7WwqehE0EyRknMdSFPOat',
-        'Dehaze-NYU.zip', quiet=False
+        'https://drive.google.com/uc?id=' + file_id,
+        file_name, quiet=False
     )
-    print('Unpacking Dataset')
-    subprocess.run(['unzip', 'Dehaze-NYU.zip'])
+    print('Unpacking...')
+    subprocess.run(['unzip', file_name, '-d', unpack_location])
+    subprocess.run(['rm', file_name])
     print('Done!!!')
+
+
+def download_dataset():
+    download_from_drive(
+        file_id='1sInD9Ydq8-x7WwqehE0EyRknMdSFPOat',
+        file_name='Dehaze-NYU.zip', unpack_location='./'
+    )
 
 
 def init_wandb(project_name, experiment_name, wandb_api_key):

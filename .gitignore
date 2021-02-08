@@ -3,3 +3,5 @@ venv/
 **.ipynb_checkpoints**
 **pycache**
 abcd.ipynb
+**aodnet_weights**
+**.DS_Store**
