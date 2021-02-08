@@ -29,14 +29,15 @@ class Trainer:
             plot_result(x.numpy()[_], y.numpy()[_], 'Hazy', 'Original')
 
     def build_datasets(
-            self, dataset_path: str, image_crop_size: int,
-            buffer_size: int, batch_size: int, val_split: float):
+            self, dataset_path: str, image_crop_size: int, buffer_size: int,
+            batch_size: int, val_split: float, plot_samples: bool):
         dataloader = DeHazeDataLoader(dataset_path=dataset_path)
         self.train_dataset, self.val_dataset = dataloader.build_dataset(
             image_crop_size=image_crop_size, buffer_size=buffer_size,
             batch_size=batch_size, val_split=val_split
         )
-        self._plot_dataset_samples()
+        if plot_samples:
+            self._plot_dataset_samples()
 
     def build_model(
             self, build_shape: Tuple[int, int, int, int], stddev: float = 0.02,
