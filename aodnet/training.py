@@ -96,5 +96,5 @@ class Trainer:
     def save_weights(self, model_name: str):
         save_path = './checkpoints/{}'.format(model_name)
         print('Saving model weights at {}...'.format(save_path))
-        self.model.save_weights(save_path)
+        self.model.save_weights(save_path, save_format='tf')
         print('Done!!!')
