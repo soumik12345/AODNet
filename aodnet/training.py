@@ -54,7 +54,7 @@ class Trainer:
         log_dir = "./logs/fit/" + datetime.now().strftime("%Y%m%d-%H%M%S")
         callbacks = [
             tf.keras.callbacks.ModelCheckpoint(
-                os.path.join(checkpoint_dir, 'aodnet.ckpt'),
+                os.path.join(checkpoint_dir, 'aodnet'),
                 monitor='loss', save_weights_only=True, mode='auto', save_freq='epoch'
             ),
             tf.keras.callbacks.TensorBoard(
