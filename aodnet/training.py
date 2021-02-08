@@ -67,11 +67,11 @@ class Trainer:
     def train(self, checkpoint_dir: str = './checkpoints/', epochs: int = 10):
         log_dir = "./logs/fit/" + datetime.now().strftime("%Y%m%d-%H%M%S")
         callbacks = [
-            tf.keras.callbacks.ModelCheckpoint(
-                filepath='./checkpoints/epoch_{epoch}/aodnet_weights.ckpt',
-                monitor='loss', save_weights_only=True, save_best_only=True,
-                mode='min', save_freq='epoch'
-            ),
+            # tf.keras.callbacks.ModelCheckpoint(
+            #     filepath='./checkpoints/epoch_{epoch}/aodnet_weights.ckpt',
+            #     monitor='loss', save_weights_only=True, save_best_only=True,
+            #     mode='min', save_freq='epoch'
+            # ),
             tf.keras.callbacks.TensorBoard(
                 log_dir=log_dir, histogram_freq=1,
                 update_freq=50, write_images=True
@@ -87,8 +87,14 @@ class Trainer:
         self._plot_history(
             train_property='peak_signal_noise_ratio', plot_title='PSNR').show()
 
-    def save(self, model_name: str):
+    def save_model(self, model_name: str):
         save_path = './checkpoints/{}'.format(model_name)
         print('Saving model at {}...'.format(save_path))
         self.model.save(save_path)
+        print('Done!!!')
+
+    def save_weights(self, model_name: str):
+        save_path = './checkpoints/{}'.format(model_name)
+        print('Saving model weights at {}...'.format(save_path))
+        self.model.save_weights(save_path)
         print('Done!!!')
