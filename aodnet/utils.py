@@ -18,7 +18,6 @@ def download_from_drive(file_id: str, file_name: str, unpack_location: str = './
         file_name, quiet=False
     )
     print('Unpacking...')
-    # subprocess.run(['unzip', file_name, '-d', unpack_location])
     unzip(file_name, extract_location=unpack_location)
     subprocess.run(['rm', file_name])
     print('Done!!!')

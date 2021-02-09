@@ -1,5 +1,7 @@
 # AODNet
 
+[![](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/soumik12345/aodnet/app.py)
+
 Tensorflow implementation of [An All-in-One Network for Dehazing and Beyond](https://arxiv.org/pdf/1707.06543.pdf).
 
 ![](./assets/aodnet_architecture.jpg)
