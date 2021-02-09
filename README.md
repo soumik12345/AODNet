@@ -75,7 +75,7 @@ Tensorflow implementation of [An All-in-One Network for Dehazing and Beyond](htt
             <td><img src="assets/sample_pred_images/sample_pred_7.jpeg"></td>
         </tr>
         <tr>
-            <td><img src="assets/sample_test_images/sample_image_8.jpg.jpg"></td>
+            <td><img src="assets/sample_test_images/sample_image_8.jpg"></td>
             <td><img src="assets/sample_pred_images/sample_pred_8.jpeg"></td>
         </tr>
     </tbody>
