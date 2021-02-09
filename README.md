@@ -36,50 +36,21 @@ Tensorflow implementation of [An All-in-One Network for Dehazing and Beyond](htt
 
 ### Inference on Real-world Hazy Images
 
-<table>
-    <thead>
-        <td>
-            Original Hazy Image
-        </td>
-        <td>
-            Predicted Image
-        </td>
-    </thead>
-    <tbody>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_1.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_1.jpeg"></td>
-        </tr>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_2.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_2.jpeg"></td>
-        </tr>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_3.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_3.jpeg"></td>
-        </tr>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_4.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_4.jpeg"></td>
-        </tr>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_5.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_5.jpeg"></td>
-        </tr>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_6.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_6.jpeg"></td>
-        </tr>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_7.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_7.jpeg"></td>
-        </tr>
-        <tr>
-            <td><img src="assets/sample_test_images/sample_image_8.jpg"></td>
-            <td><img src="assets/sample_pred_images/sample_pred_8.jpeg"></td>
-        </tr>
-    </tbody>
-</table>
+![](./assets/sample_1.png)
+
+![](./assets/sample_2.png)
+
+![](./assets/sample_3.png)
+
+![](./assets/sample_4.png)
+
+![](./assets/sample_5.png)
+
+![](./assets/sample_6.png)
+
+![](./assets/sample_7.png)
+
+![](./assets/sample_8.png)
 
 ## Reference
 
