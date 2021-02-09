@@ -18,27 +18,68 @@ Tensorflow implementation of [An All-in-One Network for Dehazing and Beyond](htt
 
 ## Results
 
-![](./assets/pred_1.png)
+### NYU-2 Test Set
 
-![](./assets/pred_2.png)
+![](assets/test_set/pred_1.png)
 
-![](./assets/pred_3.png)
+![](assets/test_set/pred_2.png)
 
-![](./assets/pred_4.png)
+![](assets/test_set/pred_3.png)
 
-![](./assets/pred_5.png)
+![](assets/test_set/pred_4.png)
 
-![](./assets/pred_6.png)
+![](assets/test_set/pred_8.png)
 
-![](./assets/pred_7.png)
+![](assets/test_set/pred_10.png)
 
-![](./assets/pred_8.png)
+![](assets/test_set/pred_11.png)
 
-![](./assets/pred_9.png)
+### Inference on Real-world Hazy Images
 
-![](./assets/pred_10.png)
-
-![](./assets/pred_11.png)
+<table>
+    <thead>
+        <td>
+            Original Hazy Image
+        </td>
+        <td>
+            Predicted Image
+        </td>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_1.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_1.jpeg"></td>
+        </tr>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_2.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_2.jpeg"></td>
+        </tr>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_3.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_3.jpeg"></td>
+        </tr>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_4.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_4.jpeg"></td>
+        </tr>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_5.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_5.jpeg"></td>
+        </tr>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_6.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_6.jpeg"></td>
+        </tr>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_7.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_7.jpeg"></td>
+        </tr>
+        <tr>
+            <td><img src="assets/sample_test_images/sample_image_8.jpg.jpg"></td>
+            <td><img src="assets/sample_pred_images/sample_pred_8.jpeg"></td>
+        </tr>
+    </tbody>
+</table>
 
 ## Reference
 
