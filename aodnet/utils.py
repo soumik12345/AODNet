@@ -1,9 +1,15 @@
 import os
 import wandb
 import gdown
+import zipfile
 import subprocess
 import tensorflow as tf
 from matplotlib import pyplot as plt
+
+
+def unzip(zip_file: str, extract_location: str):
+    with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+        zip_ref.extractall(extract_location)
 
 
 def download_from_drive(file_id: str, file_name: str, unpack_location: str = './'):
@@ -12,7 +18,8 @@ def download_from_drive(file_id: str, file_name: str, unpack_location: str = './
         file_name, quiet=False
     )
     print('Unpacking...')
-    subprocess.run(['unzip', file_name, '-d', unpack_location])
+    # subprocess.run(['unzip', file_name, '-d', unpack_location])
+    unzip(file_name, extract_location=unpack_location)
     subprocess.run(['rm', file_name])
     print('Done!!!')
 
