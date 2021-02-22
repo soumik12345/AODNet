@@ -16,25 +16,7 @@ Tensorflow implementation of [An All-in-One Network for Dehazing and Beyond](htt
 
 - `python3 -m streamlit run app.py`
 
-## Results
-
-### NYU-2 Test Set
-
-![](assets/test_set/pred_1.png)
-
-![](assets/test_set/pred_2.png)
-
-![](assets/test_set/pred_3.png)
-
-![](assets/test_set/pred_4.png)
-
-![](assets/test_set/pred_8.png)
-
-![](assets/test_set/pred_10.png)
-
-![](assets/test_set/pred_11.png)
-
-### Inference on Real-world Hazy Images
+## Results - Looking Through the Haze of Delhi
 
 ![](./assets/sample_1.png)
 
